@@ -3,6 +3,7 @@ package model;
 import java.awt.Image;
 import java.io.IOException;
 import java.util.Observable;
+import model.IRoad;
 
 import Element.Element;
 
@@ -52,7 +53,6 @@ public class Road implements IRoad{
 	}
 
 	public Observable getObservable() {
-		// TODO Auto-generated method stub
 		return null;
 	}
 	

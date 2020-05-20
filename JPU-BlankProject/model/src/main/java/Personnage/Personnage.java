@@ -3,9 +3,12 @@ package Personnage;
 import java.awt.Image;
 import java.awt.Point;
 
+import Element.Correspondence;
 import Element.Element;
+import Element.Type;
 
-public class Personnage extends Element implements IPerson{
+
+public class Personnage extends Element{
 	//****ATTRIBUT****//
 	private Point position;
 	private boolean alive = true;
@@ -15,24 +18,55 @@ public class Personnage extends Element implements IPerson{
 	
 	
 	//****CONSTRUCTOR****//
-	public Personnage() {
-		super(null, null);
+	public Personnage(Type type, Correspondence correspondence) {
+		super(type, correspondence);
+		this.position = new Point();
+	}
+	
+	public Personnage(int x, int y, Type type, Correspondence correspondence) {
+		this(type, correspondence);
+		this.setX(x);
+		this.setY(y);
 	}
 	
 	
 	
-	public Image move() {
-		return null;
+	//****SETTERS****//
+	public void setX(int x) {
+		position.x = x;
 	}
-
+	
+	public void setY(int y) {
+		position.y = y;
+	}
+	
+	public void  setAddPersonnage(Personnage addPersonnage) {
+		
+	}
+	
+	
+	
+	//****GETTERS****//
 	public int getX() {
-		return 0;
+		return position.x;
 	}
 
 	public int getY() {
-		return 0;
+		return position.y;
 	}
 
+	public Point getPosition() {
+		return position;
+	}
+	
+	public Personnage  getAddPersonnage() {
+		return null;
+		
+	}
+	
+	
+	
+	//****METHODES****//
 	public Image isAlive() {
 		return null;
 	}
@@ -41,8 +75,7 @@ public class Personnage extends Element implements IPerson{
 		return null;
 	}
 
-	public Point getPosition() {
+	public Image move() {
 		return null;
 	}
-	
 }
