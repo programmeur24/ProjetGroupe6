@@ -30,15 +30,15 @@ public class GroupElementFactory {
 		return brokenWall;
 	}
 	
-	public GroupElement Diamond() {
+	public GroupElement createDiamond() {
 		return diamond;
 	}
 	
-	public GroupElement createStone() {
+	public GroupElement createcreateStone() {
 		return stone;
 	}
 	
-	public GroupElement Metal() {
+	public GroupElement createMetal() {
 		return metal;
 	}
 	

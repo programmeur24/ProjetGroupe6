@@ -5,9 +5,11 @@ import java.io.File;
 import java.io.IOException;
 
 import javax.imageio.ImageIO;
+import javax.swing.ImageIcon;
 
 public class Correspondence {
 	//****ATTRIBUT****//
+	private ImageIcon imageIco;
 	private Image image;
 	private String imageName;
 	private char characterImage;
@@ -43,7 +45,10 @@ public class Correspondence {
 	public void setImageLoaded(boolean imageLoaded) {
 		this.imageLoaded = imageLoaded;
 	}
-
+	
+	public void setImageIco(ImageIcon imageIco) {
+		this.imageIco = imageIco;
+	}
 	
 	
 	
@@ -64,10 +69,15 @@ public class Correspondence {
 		return imageLoaded;
 	}
 	
+	public ImageIcon getImageIco() {
+		return imageIco;
+	}
+	
 	
 	
 	//****METHODES****//
 	public final void loadImage() throws IOException {
-		this.setImage(ImageIO.read(new File("image/"+this.getImageName())));	
+		this.imageIco = new ImageIcon(getClass().getResource("/Images/"+this.getImageName()));
+		this.setImage(this.imageIco.getImage());	
 	}
 }
