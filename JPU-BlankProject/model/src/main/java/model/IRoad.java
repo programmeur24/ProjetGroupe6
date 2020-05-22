@@ -8,7 +8,7 @@ import Element.Element;
 public interface IRoad {
 	public int getWidth();
 	public int getHeight();
-	public Element getElementRoad();
+	public Element getElementRoadXY(final int x, final int y);
 	public void setHeroHasChange();
 	public Observable getObservable();
 }

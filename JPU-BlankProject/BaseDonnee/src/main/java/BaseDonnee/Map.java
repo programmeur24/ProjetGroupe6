@@ -1,3 +1,4 @@
+package BaseDonnee;
 import java.sql.ResultSet;
 import java.sql.SQLException;
 
@@ -35,6 +36,7 @@ public class Map extends BDConnection implements IMap{
 	}
 
 	public String selectBrokenWall(int id) {
+		System.out.println("je passe par ici");
 		String rq  = "SELECT Name_Mur_Detruit FROM `maps` WHERE Id = "+id;
 		re = executeQuery(rq);
 		try {

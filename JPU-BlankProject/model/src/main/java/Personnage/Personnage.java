@@ -6,25 +6,28 @@ import java.awt.Point;
 import Element.Correspondence;
 import Element.Element;
 import Element.Type;
+import model.IRoad;
 
 
-public class Personnage extends Element{
+public abstract class Personnage extends Element{
 	//****ATTRIBUT****//
-	private Point position;
-	private boolean alive = true;
-	private boolean versDroite = true;
-	private boolean versHaut = true;
+	protected Point position;
+	protected boolean alive = true;
+	protected Correspondence correspondenceUp;
+	protected Correspondence correspondenceDown;
+	protected Correspondence correspondenceLeft;
+	protected Correspondence correspondenceRight;
 	
 	
 	
 	//****CONSTRUCTOR****//
-	public Personnage(Type type, Correspondence correspondence) {
+	public Personnage(Type type, IRoad road, Correspondence correspondence) {
 		super(type, correspondence);
 		this.position = new Point();
 	}
 	
-	public Personnage(int x, int y, Type type, Correspondence correspondence) {
-		this(type, correspondence);
+	public Personnage(int x, int y, IRoad road, Type type, Correspondence correspondence) {
+		this(type, road, correspondence);
 		this.setX(x);
 		this.setY(y);
 	}
@@ -67,15 +70,9 @@ public class Personnage extends Element{
 	
 	
 	//****METHODES****//
-	public Image isAlive() {
-		return null;
-	}
+	public abstract String isAlive();
 
-	public Image isDeaded() {
-		return null;
-	}
+	public abstract String isDeaded();
 
-	public Image move() {
-		return null;
-	}
+	public abstract Image move();
 }

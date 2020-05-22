@@ -1,7 +1,8 @@
+package BaseDonnee;
 import java.sql.ResultSet;
 import java.sql.SQLException;
 
-public class Personnage extends BDConnection implements IPersonnage{
+public class Personn extends BDConnection implements IPersonnage{
 
 	/**
 	 * 
@@ -9,7 +10,7 @@ public class Personnage extends BDConnection implements IPersonnage{
 	private static final long serialVersionUID = 5663661208228644072L;
 	private ResultSet re;
 
-	public Personnage() {
+	public void Personnage() {
 		this.re = null;
 	}
 	

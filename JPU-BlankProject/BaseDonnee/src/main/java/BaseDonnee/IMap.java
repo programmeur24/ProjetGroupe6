@@ -1,3 +1,4 @@
+package BaseDonnee;
 
 public interface IMap {
 	public String selectMap(int id);

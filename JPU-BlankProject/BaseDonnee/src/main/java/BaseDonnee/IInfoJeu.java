@@ -1,3 +1,4 @@
+package BaseDonnee;
 
 public interface IInfoJeu {
 	public int selectScore(int idMap, int idPersonnage);

@@ -1,3 +1,4 @@
+package BaseDonnee;
 
 public class Main {
 	public Map map;

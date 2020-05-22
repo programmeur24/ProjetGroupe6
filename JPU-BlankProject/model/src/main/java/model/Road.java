@@ -1,11 +1,16 @@
 package model;
 
 import java.awt.Image;
+import java.io.BufferedReader;
+import java.io.FileInputStream;
+import java.io.FileNotFoundException;
 import java.io.IOException;
+import java.io.InputStreamReader;
 import java.util.Observable;
 import model.IRoad;
 
 import Element.Element;
+import Group.GroupElementFactory;
 
 public class Road implements IRoad{
 
@@ -14,7 +19,7 @@ public class Road implements IRoad{
 	private Element[][] elementRoad;
 	
 	
-	public Road(final String fileName) throws IOException{
+	public Road(final String fileName) throws Exception{
 		super();
 		this.loadFile(fileName);
 	}
@@ -59,14 +64,24 @@ public class Road implements IRoad{
 	
 	
 	//****METHODES****//
-	public void loadFile(String filaName) {
-		
+	public void loadFile(String fileName) throws Exception {
+		final BufferedReader buffer = new BufferedReader(new InputStreamReader(new FileInputStream("")));
+        String line;
+        int y = 0;
+        line = buffer.readLine();
+        this.setWidth(Integer.parseInt(line));
+        line = buffer.readLine();
+        this.setHeight(Integer.parseInt(line));
+        this.elementRoad = new Element[this.getWidth()][this.getHeight()];
+        line = buffer.readLine();
+        while (line != null) {
+            for (int x = 0; x < line.toCharArray().length; x++) {
+                this.setElementRoadXY(GroupElementFactory.getFromFileSymbole(line.toCharArray()[x]), x, y);
+            }
+            line = buffer.readLine();
+            y++;
+        }
+        buffer.close();
 	}
 
-
-	@Override
-	public Element getElementRoad() {
-		// TODO Auto-generated method stub
-		return null;
-	}
 }

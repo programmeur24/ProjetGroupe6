@@ -1,6 +1,8 @@
 package model;
 
+import Personnage.Hero;
 import Personnage.IPerson;
+import Personnage.Monstre;
 
 public class InsanePersonModel implements IInsanePersonModel{
 	//****ATTRIBUTS****//
@@ -11,12 +13,10 @@ public class InsanePersonModel implements IInsanePersonModel{
 	
 	
 	//****CONSTRUCTOR****//
-	public InsanePersonModel(String fileName, int startX, int startY) {
-		
-	}
-	
-	public InsanePersonModel(String fileName) {
-		
+	public InsanePersonModel(String fileName, int startX, int startY) throws Exception {
+		this.road = new Road(fileName);
+		this.hero = (IPerson) new Hero(startX, startY, road); 
+		this.monstre = (IPerson) new Monstre(startX, startY, road); 
 	}
 	
 	

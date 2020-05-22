@@ -1,11 +1,14 @@
 package Group;
 
+import BaseDonnee.IMap;
+import BaseDonnee.Map;
 import Element.Correspondence;
 import Element.Type;
 
 public class Diamond extends GroupElement {
 	//****ATTRIBUTS****//
 	private static Correspondence correspondence = new Correspondence(selectNameImage(), 'D');
+	private static IMap map = new Map();
 		
 	public Diamond() {
 			
@@ -23,6 +26,6 @@ public class Diamond extends GroupElement {
 		
 	//****METHODES****//
 	public static String selectNameImage() {
-		return null;
+		return map.selectDiamond(1);
 	}
 }

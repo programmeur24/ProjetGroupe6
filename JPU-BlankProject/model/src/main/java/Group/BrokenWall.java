@@ -1,11 +1,14 @@
 package Group;
 
+import BaseDonnee.IMap;
+import BaseDonnee.Map;
 import Element.Correspondence;
 import Element.Type;
 
 public class BrokenWall extends GroupElement {
 	//****ATTRIBUTS****//
-	private static Correspondence correspondence = new Correspondence(selectNameImage(), '!');
+	private static Correspondence correspondence = new Correspondence("murcasse", '!');
+	private static IMap map = new Map();
 		
 	public BrokenWall() {
 			
@@ -23,6 +26,6 @@ public class BrokenWall extends GroupElement {
 		
 	//****METHODES****//
 	public static String selectNameImage() {
-		return null;
+		return map.selectBrokenWall(1);
 	}
 }

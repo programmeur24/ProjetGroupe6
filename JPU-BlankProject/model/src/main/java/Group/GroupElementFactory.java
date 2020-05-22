@@ -2,7 +2,7 @@ package Group;
 
 public class GroupElementFactory {
 	//****ATTRIBUT****//
-	private final BrokenWall brokenWall =  new BrokenWall();
+	private final static BrokenWall brokenWall =  new BrokenWall();
 	private final Diamond diamond = new Diamond();
 	private final Metal metal = new Metal();
 	private final Stone stone = new Stone();
@@ -18,7 +18,7 @@ public class GroupElementFactory {
 	
 	
 	//****GETTERS****//
-	public GroupElement getFromFileSymbole(char symbole) {
+	public static GroupElement getFromFileSymbole(char symbole) {
 		//Le reste à developper apres les tests
 		return brokenWall;
 	}

@@ -1,11 +1,14 @@
 package Group;
 
+import BaseDonnee.IMap;
+import BaseDonnee.Map;
 import Element.Correspondence;
 import Element.Type;
 
 public class Wall extends GroupElement {
 	//****ATTRIBUTS****//
 	private static Correspondence correspondence = new Correspondence(selectNameImage(), '|');
+	private static IMap map = new Map();
 		
 	public Wall() {
 			
@@ -23,6 +26,6 @@ public class Wall extends GroupElement {
 		
 	//****METHODES****//
 	public static String selectNameImage() {
-		return null;
+		return map.selectWall(1);
 	}
 }
