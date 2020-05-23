@@ -17,6 +17,8 @@ public abstract class Personnage extends Element{
 	protected Correspondence correspondenceDown;
 	protected Correspondence correspondenceLeft;
 	protected Correspondence correspondenceRight;
+	protected int x;
+	protected int y;
 	
 	
 	
@@ -36,11 +38,11 @@ public abstract class Personnage extends Element{
 	
 	//****SETTERS****//
 	public void setX(int x) {
-		position.x = x;
+		this.x = x;
 	}
 	
 	public void setY(int y) {
-		position.y = y;
+		this.y = y;
 	}
 	
 	public void  setAddPersonnage(Personnage addPersonnage) {
@@ -51,11 +53,11 @@ public abstract class Personnage extends Element{
 	
 	//****GETTERS****//
 	public int getX() {
-		return position.x;
+		return this.x;
 	}
 
 	public int getY() {
-		return position.y;
+		return this.y;
 	}
 
 	public Point getPosition() {

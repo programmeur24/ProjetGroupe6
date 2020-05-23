@@ -7,7 +7,7 @@ import Element.Type;
 
 public class BrokenWall extends GroupElement {
 	//****ATTRIBUTS****//
-	private static Correspondence correspondence = new Correspondence("murcasse", '!');
+	private static Correspondence correspondence = new Correspondence("/Images/murcasse.png", '!');
 	private static IMap map = new Map();
 		
 	public BrokenWall() {

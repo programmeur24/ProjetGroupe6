@@ -7,7 +7,7 @@ import Element.Type;
 
 public class Wall extends GroupElement {
 	//****ATTRIBUTS****//
-	private static Correspondence correspondence = new Correspondence(selectNameImage(), '|');
+	private static Correspondence correspondence = new Correspondence("/Images/mur.png", '|');
 	private static IMap map = new Map();
 		
 	public Wall() {

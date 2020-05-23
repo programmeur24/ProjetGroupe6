@@ -1,6 +1,7 @@
 package Element;
 
 import java.awt.Image;
+import java.io.IOException;
 
 public class Element implements IElement{
 	//****ATTRIBUT****//
@@ -25,6 +26,12 @@ public class Element implements IElement{
 		return type;
 	}
 	public Image getImage() {
+		try {
+			getCorrespondence().loadImage();
+		} catch (IOException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
 		return getCorrespondence().getImage();
 	}
 	

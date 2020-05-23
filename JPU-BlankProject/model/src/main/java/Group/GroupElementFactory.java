@@ -3,11 +3,11 @@ package Group;
 public class GroupElementFactory {
 	//****ATTRIBUT****//
 	private final static BrokenWall brokenWall =  new BrokenWall();
-	private final Diamond diamond = new Diamond();
-	private final Metal metal = new Metal();
-	private final Stone stone = new Stone();
-	private final Wall wall = new Wall();
-	private GroupElement groupElement[] = {
+	private final static Diamond diamond = new Diamond();
+	private final static Metal metal = new Metal();
+	private final static Stone stone = new Stone();
+	private final static Wall wall = new Wall();
+	private static GroupElement groupElement[] = {
 			brokenWall,
 			diamond,
 			metal,
@@ -19,7 +19,11 @@ public class GroupElementFactory {
 	
 	//****GETTERS****//
 	public static GroupElement getFromFileSymbole(char symbole) {
-		//Le reste à developper apres les tests
+		for(GroupElement ge : groupElement) {
+			if(ge.getCorrespondence().getCharacterImage() == symbole) {
+				 return ge;
+			}
+		}
 		return brokenWall;
 	}
 	

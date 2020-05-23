@@ -19,13 +19,14 @@ public class Hero extends Personnage{
 	private String str;
 	private ImageIcon  icoPerso;
 	private Image  imgPerso;
+	private boolean faireRien = false;
 	
 	
 	
 	//****CONSTRUCTOR****//
 	public Hero(int x, int y, IRoad road) {
 		super(x, y,road, Type.HARD, correspondence);
-		this.correspondenceUp = new Correspondence(selectNameImage(1), 'M');
+		this.correspondenceUp = new Correspondence("JoueurVersDroite.png", 'M');
 	}
 	
 	
@@ -39,7 +40,12 @@ public class Hero extends Personnage{
 		
 	//****METHODES****//
 	public static String selectNameImage(int i) {
-		return map.selectMonstre(i);
+		return null;
+	}
+	
+	public Image travaille() {
+		icoPerso = new ImageIcon(getClass().getResource("/Images/JoueurVersDroite.png"));
+		return imgPerso = icoPerso.getImage();
 	}
 	
 	public Image move() {

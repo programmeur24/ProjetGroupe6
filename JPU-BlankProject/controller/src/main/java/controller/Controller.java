@@ -1,94 +1,50 @@
 package controller;
 
-import contract.ControllerOrder;
 import contract.IController;
-import contract.IModel;
-import contract.IView;
+import model.IInsanePersonModel;
+import view.IIsanePersonView;
 
-/**
- * The Class Controller.
- */
 public final class Controller implements IController {
-
-	/** The view. */
-	private IView		view;
-
-	/** The model. */
-	private IModel	model;
-
-	/**
-	 * Instantiates a new controller.
-	 *
-	 * @param view
-	 *          the view
-	 * @param model
-	 *          the model
-	 */
-	public Controller(final IView view, final IModel model) {
-		this.setView(view);
-		this.setModel(model);
+	//****ATTRIBUTS****//
+	private IInsanePersonModel model;
+	private IIsanePersonView view;
+	
+	
+	
+	//****CONSTRUCTOR****//
+	public Controller(IInsanePersonModel model, IIsanePersonView view) {
+		super();
+		this.model = model;
+		this.view = view;
+	}
+	
+	
+	
+	//****GETTERS****//
+	public IInsanePersonModel getModel() {
+		return model;
 	}
 
-	/**
-     * Control.
-     */
-	/*
-	 * (non-Javadoc)
-	 *
-	 * @see contract.IController#control()
-	 */
-	public void control() {
-		this.view.printMessage("Appuyer sur les touches 'E', 'F', 'D' ou 'I', pour afficher Hello world dans la langue d votre choix.");
+	public IIsanePersonView getView() {
+		return view;
 	}
-
-	/**
-     * Sets the view.
-     *
-     * @param pview
-     *            the new view
-     */
-	private void setView(final IView pview) {
-		this.view = pview;
-	}
-
-	/**
-	 * Sets the model.
-	 *
-	 * @param model
-	 *          the new model
-	 */
-	private void setModel(final IModel model) {
+	
+	
+	
+	//****SETTERS****//
+	public void setModel(IInsanePersonModel model) {
 		this.model = model;
 	}
 
-	/**
-     * Order perform.
-     *
-     * @param controllerOrder
-     *            the controller order
-     */
-	/*
-	 * (non-Javadoc)
-	 *
-	 * @see contract.IController#orderPerform(contract.ControllerOrder)
-	 */
-	public void orderPerform(final ControllerOrder controllerOrder) {
-		switch (controllerOrder) {
-			case English:
-				this.model.loadHelloWorld("GB");
-				break;
-			case Francais:
-				this.model.loadHelloWorld("FR");
-				break;
-			case Deutsch:
-				this.model.loadHelloWorld("DE");
-				break;
-			case Indonesia:
-				this.model.loadHelloWorld("ID");
-				break;
-			default:
-				break;
-		}
+	public void setView(IIsanePersonView view) {
+		this.view = view;
 	}
-
+	
+	
+	
+	//****METHODES****//
+	public void control() {
+		view.setNiveau(1);
+	}
+	
 }

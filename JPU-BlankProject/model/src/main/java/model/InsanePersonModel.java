@@ -1,32 +1,39 @@
 package model;
 
+import java.util.Observable;
+
 import Personnage.Hero;
 import Personnage.IPerson;
 import Personnage.Monstre;
 
-public class InsanePersonModel implements IInsanePersonModel{
+public class InsanePersonModel extends Observable implements IInsanePersonModel{
 	//****ATTRIBUTS****//
-	public IPerson hero;
-	public IPerson monstre;
+	public Hero hero;
+	public Monstre monstre;
 	public IRoad road;
-	
+	private final int niveau = 1;
 	
 	
 	//****CONSTRUCTOR****//
 	public InsanePersonModel(String fileName, int startX, int startY) throws Exception {
 		this.road = new Road(fileName);
-		this.hero = (IPerson) new Hero(startX, startY, road); 
-		this.monstre = (IPerson) new Monstre(startX, startY, road); 
+		this.hero = new Hero(startX, startY, road); 
+		this.monstre = new Monstre(startX, startY, road); 
+	}
+	
+	public InsanePersonModel(int startX, int startY) throws Exception {
+		this.hero = new Hero(startX, startY, road); 
+		this.monstre = new Monstre(startX + 64, startY + 64, road); 
 	}
 	
 	
 	
 	//****SETTERS****//
-	public void setHero(IPerson hero) {
+	public void setHero(Hero hero) {
 		this.hero = hero;
 	}
 
-	public void setMonstre(IPerson monstre) {
+	public void setMonstre(Monstre monstre) {
 		this.monstre = monstre;
 	}
 
@@ -41,12 +48,19 @@ public class InsanePersonModel implements IInsanePersonModel{
 		return road;
 	}
 
-	public IPerson getHero() {
+	public Hero getHero() {
 		return hero;
 	}
 
-	public IPerson getMonstre() {
+	public Monstre getMonstre() {
 		return monstre;
+	}
+	public int getniveau() {
+		return niveau;
+	}
+
+	public Observable getObservable() {
+		return this;
 	}
 
 }

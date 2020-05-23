@@ -7,7 +7,7 @@ import Element.Type;
 
 public class Stone extends GroupElement {
 	//****ATTRIBUTS****//
-	private static Correspondence correspondence = new Correspondence(selectNameImage(), '.');
+	private static Correspondence correspondence = new Correspondence("/Images/rock.png", '.');
 	private static IMap map = new Map();
 		
 	public Stone() {

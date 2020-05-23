@@ -13,7 +13,7 @@ import model.IRoad;
 
 public class Monstre extends Personnage {
 	//****ATTRIBUTS****//
-	private static Correspondence correspondence = new Correspondence(selectNameImage(1), 'B');
+	private static Correspondence correspondence = new Correspondence("JoueurVersDroite.png", 'B');
 	private static IPersonnage per = new Personn();
 	private boolean versDroite = true;
 	private boolean versHaut = false;
@@ -40,7 +40,8 @@ public class Monstre extends Personnage {
 		
 	//****METHODES****//
 	public static String selectNameImage(int i) {
-		return per.selectPersonnage(i);
+		return null;
+		//return per.selectPersonnage(i);
 	}
 	
 	public Image move() {

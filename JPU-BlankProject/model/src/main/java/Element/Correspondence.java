@@ -77,7 +77,7 @@ public class Correspondence {
 	
 	//****METHODES****//
 	public final void loadImage() throws IOException {
-		this.imageIco = new ImageIcon(getClass().getResource("/Images/"+this.getImageName()));
+		this.imageIco = new ImageIcon(getClass().getResource(this.getImageName()));
 		this.setImage(this.imageIco.getImage());	
 	}
 }

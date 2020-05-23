@@ -7,6 +7,8 @@ public interface IPerson {
 	public Image move();
 	public int getX();
 	public int getY();
+	public void setX();
+	public void setY();
 	public Image isAlive();
 	public Image isDeaded();
 	public Point getPosition();

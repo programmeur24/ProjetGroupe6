@@ -7,7 +7,7 @@ import Element.Type;
 
 public class Diamond extends GroupElement {
 	//****ATTRIBUTS****//
-	private static Correspondence correspondence = new Correspondence(selectNameImage(), 'D');
+	private static Correspondence correspondence = new Correspondence("/Images/Diamantbleu.png", 'D');
 	private static IMap map = new Map();
 		
 	public Diamond() {

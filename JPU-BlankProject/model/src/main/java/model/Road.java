@@ -12,10 +12,10 @@ import model.IRoad;
 import Element.Element;
 import Group.GroupElementFactory;
 
-public class Road implements IRoad{
+public class Road extends Observable implements IRoad {
 
-	private int width;
-	private int height;
+	private int width = 32;
+	private int height = 21;
 	private Element[][] elementRoad;
 	
 	
@@ -65,7 +65,8 @@ public class Road implements IRoad{
 	
 	//****METHODES****//
 	public void loadFile(String fileName) throws Exception {
-		final BufferedReader buffer = new BufferedReader(new InputStreamReader(new FileInputStream("")));
+		System.out.println("Je passe ici");
+		final BufferedReader buffer = new BufferedReader(new InputStreamReader(new FileInputStream(fileName)));
         String line;
         int y = 0;
         line = buffer.readLine();
