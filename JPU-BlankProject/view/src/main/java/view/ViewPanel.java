@@ -196,7 +196,7 @@ class ViewPanel extends JPanel implements Observer {
 	 * @param scale the zoom used to focus on the player
 	 * @param width the width of the view
 	 * @param height the height of the view
-	 * @param playerPosX the x coord of the player
+	 * @param playerPosX the x coord of the player-
 	 * @param playerPosY the y coord of the player
 	 * @param player the player
 	 * @param map the map
