@@ -18,7 +18,18 @@ public class Personn extends BDConnection implements IPersonnage{
 		String rq  = "SELECT Name FROM `player` WHERE Id = "+id;
 		re = executeQuery(rq);
 		try {
+			re.next();
+		} catch (SQLException e1) {
+			e1.printStackTrace();
+		}
+		try {
 			return re.getString("Name");
+		} catch (SQLException e) {
+			e.printStackTrace();
+		}
+		
+		try {
+			re.close();
 		} catch (SQLException e) {
 			e.printStackTrace();
 		}

@@ -1,5 +1,7 @@
 package controller;
 
+import Element.Type;
+import Personnage.Hero;
 import contract.IController;
 import model.IInsanePersonModel;
 import view.IIsanePersonView;
@@ -8,6 +10,7 @@ public final class Controller implements IController {
 	//****ATTRIBUTS****//
 	private IInsanePersonModel model;
 	private IIsanePersonView view;
+	private Hero hero;
 	
 	
 	
@@ -45,6 +48,12 @@ public final class Controller implements IController {
 	//****METHODES****//
 	public void control() {
 		view.setNiveau(1);
+	}
+	
+	public void Deplacement() {
+		if(model.getRoad().getElementRoadXY(2, 2).getType() == Type.HARD) {
+			
+		}
 	}
 	
 }

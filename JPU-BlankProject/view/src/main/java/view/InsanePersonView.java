@@ -61,7 +61,7 @@ public class InsanePersonView extends JPanel  implements Observer, KeyListener {
 				}
 			}
 		}
-		g2.drawImage(this.hero.travaille(), hero.getX(), hero.getY(), null);
+		g2.drawImage(this.hero.move(), hero.getX(), hero.getY(), null);
 		//g2.drawImage(this.road.getElementRoadXY(1, 1).getImage(), 32, 0, null);
 	}
 	
@@ -129,7 +129,19 @@ public class InsanePersonView extends JPanel  implements Observer, KeyListener {
 
 	public void keyPressed(KeyEvent e) {
 		if(e.getKeyCode() == KeyEvent.VK_RIGHT) {
-			System.out.println("Je passe ici");
+			/*System.out.println("Je passe ici");
+			this.getHero().setX(this.getHero().getX() + 32);
+			try {
+				Thread.sleep(2);
+				repaint();
+			} catch (InterruptedException e1) {
+				e1.printStackTrace();
+			}*/
+			getHero().setVersHaut(false);
+			getHero().setVersHaut(false);
+			getHero().setVersGauche(false);
+			getHero().setVersDroite(true);
+			
 			this.getHero().setX(this.getHero().getX() + 32);
 			try {
 				Thread.sleep(2);
@@ -140,7 +152,20 @@ public class InsanePersonView extends JPanel  implements Observer, KeyListener {
 		}
 		
 		if(e.getKeyCode() == KeyEvent.VK_LEFT) {
-			System.out.println("Je passe ici");
+			/*System.out.println("Je passe ici");
+			this.getHero().setX(this.getHero().getX() - 32);
+			try {
+				Thread.sleep(2);
+				repaint();
+			} catch (InterruptedException e1) {
+				e1.printStackTrace();
+			}*/
+			
+			getHero().setVersBas(false);
+			getHero().setVersHaut(false);
+			getHero().setVersGauche(true);
+			getHero().setVersDroite(false);
+			
 			this.getHero().setX(this.getHero().getX() - 32);
 			try {
 				Thread.sleep(2);
@@ -151,7 +176,20 @@ public class InsanePersonView extends JPanel  implements Observer, KeyListener {
 		}
 		
 		if(e.getKeyCode() == KeyEvent.VK_UP) {
-			System.out.println("Je passe ici");
+			/*System.out.println("Je passe ici");
+			this.getHero().setY(this.getHero().getY() - 32);
+			try {
+				Thread.sleep(2);
+				repaint();
+			} catch (InterruptedException e1) {
+				e1.printStackTrace();
+			}*/
+			
+			getHero().setVersBas(false);
+			getHero().setVersHaut(true);
+			getHero().setVersGauche(false);
+			getHero().setVersDroite(false);
+			
 			this.getHero().setY(this.getHero().getY() - 32);
 			try {
 				Thread.sleep(2);
@@ -162,13 +200,29 @@ public class InsanePersonView extends JPanel  implements Observer, KeyListener {
 		}
 		
 		if(e.getKeyCode() == KeyEvent.VK_DOWN) {
-			System.out.println("Je passe ici");
+			/*System.out.println("Je passe ici");
 			this.getHero().setY(this.getHero().getY() + 32);
 			try {
 				Thread.sleep(2);
 				repaint();
 			} catch (InterruptedException e1) {
 				e1.printStackTrace();
+			}*/
+			getHero().setVersBas(true);
+			getHero().setVersHaut(false);
+			getHero().setVersGauche(false);
+			getHero().setVersDroite(false);
+			
+			this.getHero().setY(this.getHero().getY() + 32);
+			try {
+				Thread.sleep(2);
+				repaint();
+			} catch (InterruptedException e1) {
+				e1.printStackTrace();
+			}
+			
+			if(getHero().bloquer() == true) {
+				this.getHero().setY(this.getHero().getY() + 64);
 			}
 		}
 		
@@ -178,7 +232,7 @@ public class InsanePersonView extends JPanel  implements Observer, KeyListener {
 		System.out.println("Je passe ici");
 		this.getHero().setY(this.getHero().getY());
 		try {
-			Thread.sleep(2);
+			Thread.sleep(1);
 			repaint();
 		} catch (InterruptedException e1) {
 			e1.printStackTrace();
