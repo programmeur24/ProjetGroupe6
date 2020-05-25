@@ -88,7 +88,7 @@ class ViewFrame extends JFrame implements KeyListener {
 	public void keyTyped(final KeyEvent e) {
 
 	}
-/
+	
 	public void keyPressed(final KeyEvent e) {
 		
 	}
