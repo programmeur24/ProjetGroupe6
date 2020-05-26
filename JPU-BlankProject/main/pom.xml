@@ -12,6 +12,7 @@
   		<groupId>jpublankproject</groupId>
   		<artifactId>view</artifactId>
   		<version>0.0.1-SNAPSHOT</version>
+  		<type>ear</type>
   	</dependency>
   	<dependency>
   		<groupId>jpublankproject</groupId>

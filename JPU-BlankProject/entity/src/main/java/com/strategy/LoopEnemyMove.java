@@ -10,13 +10,10 @@ import com.entity.mobileelements.Enemy;
  */
 public class LoopEnemyMove  extends Strategy<Enemy> {
 
-	/** The enemy concerned by the strategy */
+
 	private Enemy me = null;
 	
-	/**
-	 * The LoopEnemyMove strategy constructor.
-	 * @param me the enemy concerned
-	 */
+
 	public LoopEnemyMove(Enemy me) {
 		this.me = me;
 	}

@@ -42,7 +42,7 @@ public final class DBConnection {
 		}
 		return true;
 	}
-
+	//****CONNECTION****//
 	public Connection getConnection() {
 		return this.connection;
 	}

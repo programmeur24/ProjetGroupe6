@@ -8,19 +8,9 @@ import com.entity.motionlesselements.Path;
 
 import entity.Entity;
 
-/**
- * The CascadeFalling class.
- * @author Antoine Chauvel
- * @version 1.0
- *
- */
 public class CascadeFalling extends Strategy<MobileElements> {
 
-	
-	/**
-	 * The CascadeFalling strategy constructor.
-	 * @param me the mobile element concerned
-	 */
+
 	public CascadeFalling(MobileElements me) {
 		this.me = me;
 	}
@@ -55,13 +45,7 @@ public class CascadeFalling extends Strategy<MobileElements> {
 	}
 	
 	
-	
-	/**
-	 * The cascadeFalling method.
-	 * Defines the falling of the mobile element.
-	 * @param sideX the x side on which the entity is going to fell
-	 * @param sideY the y side on which the entity is going to fell
-	 */
+
 	public void cascadeFalling(int sideX, int sideY) {
 		
 		me.getMap().getArrayMap()[me.getPositionX() + sideX][me.getPositionY() + sideY] = me;
