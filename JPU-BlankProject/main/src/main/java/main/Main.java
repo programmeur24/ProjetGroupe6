@@ -12,11 +12,11 @@ public abstract class Main {
         final Model model = new Model();   
         final View view = new View(model);
         final Controller controller = new Controller(view, model);
+        
+        
         view.setController(controller);
-		
         controller.control();
         controller.orderPerform(ControllerOrder.Map1); 
-
         controller.start();
 
     }

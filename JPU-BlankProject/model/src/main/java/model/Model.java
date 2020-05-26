@@ -30,7 +30,7 @@ public final class Model extends Observable implements IModel {
 
 	
 	
-	//****GETTERS****//
+	//****SETTERS****//
 	private void setMap(final Map map) {
 		this.map = map;
 		this.modelNotify();
