@@ -8,12 +8,12 @@ import view.View;
 public abstract class Main {
 
     public static void main(final String[] args) {
-    	//****Declaration****//
+    	
         final Model model = new Model();   
         final View view = new View(model);
         final Controller controller = new Controller(view, model);
         
-        
+      //****Declaration****//
         view.setController(controller);
         controller.control();
         controller.orderPerform(ControllerOrder.Map1); 
