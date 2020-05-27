@@ -44,17 +44,17 @@ class ViewPanel extends JPanel implements Observer {
 		viewFrame.getModel().getMap();
 	}
 
-	
+	/** get ViewFrame and return it */
 	
 	private ViewFrame getViewFrame() {
 		return this.viewFrame;
 	}
-		
+		/** set ViewFramd and param it */
 	private void setViewFrame(final ViewFrame viewFrame) {
 		this.viewFrame = viewFrame;
 	}
 
-	
+	/** repaint the view */
 	public void update(final Observable arg0, final Object arg1) {
 		this.repaint();
 	}
@@ -106,14 +106,14 @@ class ViewPanel extends JPanel implements Observer {
 		}
 	}
 
-	
-	public static void startTimer() { 
+	/** start the time and launch it */
+	public static void startTimer() { // This is a timer
 		ViewPanel drawTimer = new ViewPanel();
 		TimerTask timerTask = new TimerTask() {
 			@Override
 			public void run() {
 				if (counter != -100 && counter > 0) {
-					counter--;
+					counter--;// increments the counter
 				}
 			}
 		};
@@ -121,7 +121,13 @@ class ViewPanel extends JPanel implements Observer {
 		timer.scheduleAtFixedRate(timerTask, 1000, 1000); 
 	}
 
-	
+	/**
+	 * The displayMap method.
+	 * Allows the paintComponent method to display the map and its entities.
+	 * @param graphics the Graphics
+	 * @param width the width of the view
+	 * @param height the height of the view
+	 */
 	public void displayMap(Graphics graphics, int width, int height) {
 
 		final int imageSize = 16;
@@ -161,6 +167,17 @@ class ViewPanel extends JPanel implements Observer {
 		}
 	}
 
+	/**
+	 * The focusMapOnPlayer method.
+	 * Zoom and center the attention on the player.
+	 * @param graphics the Graphics
+	 * @param width the width of the view
+	 * @param height the height of the view
+	 * @param playerPosX the x coord of the player
+	 * @param playerPosY the y coord of the player
+	 * @param scale the zoom used to focus on player
+	 * @param imageSize the sprite size
+	 */
 	public void focusMapOnPlayer(Graphics graphics, int width, int height, int playerPosX, int playerPosY, double scale, int imageSize) {
 
 		graphics.clearRect(0, 0, width, height);
@@ -172,7 +189,19 @@ class ViewPanel extends JPanel implements Observer {
 			((Graphics2D) graphics).scale(scale, scale);
 	}
 
-	
+	/**
+	 * The reverseFocusOnScreenAndStats method.
+	 * Displays statistics on the right upper corner of the view.
+	 * @param graphics the Graphics
+	 * @param scale the zoom used to focus on the player
+	 * @param width the width of the view
+	 * @param height the height of the view
+	 * @param playerPosX the x coord of the player-
+	 * @param playerPosY the y coord of the player
+	 * @param player the player
+	 * @param map the map
+	 * @param imageSize the sprite size
+	 */
 	public void reverseFocusOnScreenAndStats(Graphics graphics, double scale, int width, int height, int playerPosX,
 			int playerPosY, Player player, Map map, int imageSize) {
 
@@ -206,13 +235,13 @@ class ViewPanel extends JPanel implements Observer {
 
 	}
 	
-	
+	/** get the counter and return it */
    
     public int getCounter() {
       return counter;
     }
 
-   
+    /**sets the Counter, parameter and throw new IndexOutOfBoundsException */
     
     public void setCounter(int newCounter) throws IndexOutOfBoundsException{
       if (newCounter > 0 && newCounter < 10000) {

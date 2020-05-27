@@ -11,7 +11,7 @@ import javax.swing.JOptionPane;
 import contract.IController;
 import contract.IModel;
 
-
+/** The ViewFrame class */
 class ViewFrame extends JFrame implements KeyListener {
 
 	/** The model. */
@@ -21,7 +21,7 @@ class ViewFrame extends JFrame implements KeyListener {
 	/** The Constant serialVersionUID. */
 	private static final long serialVersionUID = -697358409737458175L;
 
-
+	/** serial version in place */
 	
 	public ViewFrame(final IModel model) throws HeadlessException {
 		this.buildViewFrame(model);
@@ -33,40 +33,44 @@ class ViewFrame extends JFrame implements KeyListener {
 		this.buildViewFrame(model);
 	}
 
+	
 	public ViewFrame(final IModel model, final String title) throws HeadlessException {
 		super(title);
 		this.buildViewFrame(model);
 	}
 
-
+	
 	public ViewFrame(final IModel model, final String title, final GraphicsConfiguration gc) {
 		super(title, gc);
 		this.buildViewFrame(model);
 	}
 
+	/** Gets the controller */
+	/** return the controller*/
+	
 	private IController getController() {
 		return this.controller;
 	}
 
+	/** sets our controller and parameter*/
+	
 	protected void setController(final IController controller) {
 		this.controller = controller;
 	}
 
-
+	/**gets the model and return it */
+	
 	protected IModel getModel() {
 		return this.model;
 	}
 
-	/**
-	 * Sets the model.
-	 *
-	 * @param model the new model
-	 */
+	/** sets the model and parameter */
+	
 	private void setModel(final IModel model) {
 		this.model = model;
 	}
 
-
+	/** build the ViewFrame and parameter */
 	
 	private void buildViewFrame(final IModel model) {
 		this.setModel(model);
@@ -74,12 +78,14 @@ class ViewFrame extends JFrame implements KeyListener {
 		this.setResizable(false);
 		this.addKeyListener(this);
 		ViewPanel vp = new ViewPanel(this);
-		this.setTitle("BoulderDash");
+		this.setTitle("Boulder Dash - Group 5");
 		this.setContentPane(vp);
 		this.setSize(640,740);
 		this.setLocationRelativeTo(null);
 	}
 
+	/** print the message */
+	
 	public void printMessage(final String message) {
 		JOptionPane.showMessageDialog(null, message);
 	}
@@ -88,12 +94,15 @@ class ViewFrame extends JFrame implements KeyListener {
 	public void keyTyped(final KeyEvent e) {
 
 	}
+
 	
 	public void keyPressed(final KeyEvent e) {
 		
 	}
 
+	
 	public void keyReleased(final KeyEvent e) {
 		this.getController().orderPerform(View.keyCodeToControllerOrder(e.getKeyCode())); 
 	}
 }
+

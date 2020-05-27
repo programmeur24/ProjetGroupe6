@@ -37,6 +37,8 @@ public final class Controller implements IController {
 	/**
 	 * Control.
 	 * Show a pop-up and print a specific message, about the game's rules.
+	 */
+	/*
 	 * (non-Javadoc)
 	 *
 	 * @see contract.IController#control()

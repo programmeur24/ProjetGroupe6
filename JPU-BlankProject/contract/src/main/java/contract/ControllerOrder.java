@@ -1,5 +1,12 @@
 package contract;
 
+
+/**
+ * The ControllerOrder enumeration
+ * @author Antoine Chauvel
+ * @version 1.0
+ *
+ */
 public enum ControllerOrder {
 
 	/** The first map */

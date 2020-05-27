@@ -5,10 +5,17 @@ import java.io.IOException;
 import com.strategy.RandomEnemyMove;
 
 import entity.Sprite;
-
+/**
+ * The Enemy class.
+ *
+ * @author Antoine Chauvel
+ * @version 1.0
+ */
 public class Enemy extends MobileElements {
 
-	//****ATTRIBUTS****//
+	/**
+	 * The basic sprite of an enemy.
+	 */
 	private static final Sprite spriteDown = new Sprite('i',"Enemy.png");
 	static {
 		try {
@@ -18,9 +25,12 @@ public class Enemy extends MobileElements {
 		}
 	}
 	
-	
-	
-	//****CONSTRUCTOR****//
+	/**
+	 * The enemy's constructor
+	 * Use of DP strategy to set a specific one.
+	 * @param x the initial enemy's x
+	 * @param y the initial enemy's y
+	 */
 	public Enemy(int x, int y) {
 		super(spriteDown, x, y);
 		this.setStrategy(new RandomEnemyMove(this));
