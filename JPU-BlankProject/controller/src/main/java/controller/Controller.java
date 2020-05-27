@@ -7,7 +7,8 @@ import contract.IView;
 
 /**
  * The Class Controller.
- * @author Antoine Chauvel
+ * this class permits the controlle of the View pack and Model and it is in this class that we choose the map
+ * @author Groupe 7 : Sipoufo, Regina, Christ, Wilfrid
  * @version 1.0
  */
 public final class Controller implements IController {
@@ -36,8 +37,7 @@ public final class Controller implements IController {
 
 	/**
 	 * Control.
-	 * Show a pop-up and print a specific message, about the game's rules.
-	 * (non-Javadoc)
+	 * Permits the display of the message of the beginning of the game
 	 *
 	 * @see contract.IController#control()
 	 */

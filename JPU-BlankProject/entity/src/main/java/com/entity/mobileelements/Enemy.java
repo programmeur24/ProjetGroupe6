@@ -5,10 +5,17 @@ import java.io.IOException;
 import com.strategy.RandomEnemyMove;
 
 import entity.Sprite;
-
+/**
+ * The Enemy class.
+ *
+ * @author Groupe 7 : Sipoufo, Regina, Christ, Wilfrid
+ * @version 1.0
+ */
 public class Enemy extends MobileElements {
 
-	//****ATTRIBUTS****//
+	/**
+	 * The basic sprite of an enemy.
+	 */
 	private static final Sprite spriteDown = new Sprite('i',"Enemy.png");
 	static {
 		try {
@@ -18,9 +25,11 @@ public class Enemy extends MobileElements {
 		}
 	}
 	
-	
-	
-	//****CONSTRUCTOR****//
+	/**
+	 * The enemy's constructor
+	 * @param x the initial position of the enemy x
+	 * @param y the initial position of the enemy y
+	 */
 	public Enemy(int x, int y) {
 		super(spriteDown, x, y);
 		this.setStrategy(new RandomEnemyMove(this));

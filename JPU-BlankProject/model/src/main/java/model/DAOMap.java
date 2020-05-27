@@ -7,37 +7,51 @@ import java.sql.SQLException;
 
 import entity.Map;
 
+/**
+ * The DBConnection class.
+ * @author Groupe 7 : Sipoufo, Regina, Christ, Wilfrid
+ * @version 1.0
+ *
+ */
 public class DAOMap extends DAOEntity<Map> {
 
-	
-	//****CONSTRUCTOR****//
+	/**
+	 * Instantiates a new DAO map.
+	 *
+	 * @param connection
+	 * @throws SQLException
+	 */
 	public DAOMap(final Connection connection) throws SQLException {
 		super(connection);
 	}
 
-	
-	
-	
-	//****METHODES****//
+	/*
+	 * @see model.DAOEntity#create(model.Entity)
+	 */
 	public boolean create(final Map entity) {
 		return false;
 	}
 
-	@Override
+	/*
+	 * @see model.DAOEntity#delete(model.Entity)
+	 */
 	public boolean delete(final Map entity) {
-		// Not implemented
 		return false;
 	}
 
+	/*
+	 * @see model.DAOEntity#update(model.Entity)
+	 */
 	@Override
 	public boolean update(final Map entity) {
 		// Not implemented
 		return false;
 	}
 
-	@Override
+	/*
+	 * @see model.DAOEntity#find(int)
+	 */
 	public Map find(final int id) {
-		//HelloWorld helloWorld = new HelloWorld();
 		Map map = new Map();
 		
 		try {

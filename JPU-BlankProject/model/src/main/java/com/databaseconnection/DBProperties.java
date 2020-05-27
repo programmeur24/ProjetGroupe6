@@ -4,6 +4,12 @@ import java.io.IOException;
 import java.io.InputStream;
 import java.util.Properties;
 
+/**
+ * The DBConnection class.
+ * @author Groupe 7 : Sipoufo, Regina, Christ, Wilfrid
+ * @version 1.0
+ *
+ */
 
 class DBProperties extends Properties {
 
@@ -22,7 +28,9 @@ class DBProperties extends Properties {
 	
 	
 	
-	//****CONSTRUCTORS****//
+	/**
+	 * The DBProperties's constructor.
+	 */
 	public DBProperties() {
 		InputStream inputStream;
 
@@ -42,30 +50,53 @@ class DBProperties extends Properties {
 
 	
 	
-	//****GETTERS****//
+	/**
+	 * 
+	 * @return String use for URL of the DataBase
+	 */
 	public String getUrl() {
 		return this.url;
 	}
 	
+	
+	/**
+	 * 
+	 * @return String use for login of the DataBase
+	 */
 	public String getLogin() {
 		return this.login;
 	}
 	
+	/**
+	 * 
+	 * @return String use for password of the DataBase
+	 */
 	public String getPassword() {
 		return this.password;
 	}
 	
 	
 	
-	//****SETTERS****//
+	/**
+	 * 
+	 * @param url
+	 */
 	private void setUrl(final String url) {
 		this.url = url;
 	}
 
+	/**
+	 * 
+	 * @param login
+	 */
 	private void setLogin(final String login) {
 		this.login = login;
 	}
 
+	/**
+	 * 
+	 * @param password
+	 */
 	private void setPassword(final String password) {
 		this.password = password;
 	}

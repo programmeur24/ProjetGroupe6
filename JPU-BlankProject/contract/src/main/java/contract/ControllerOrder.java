@@ -1,5 +1,12 @@
 package contract;
 
+
+/**
+ * The DBConnection class.
+ * @author Groupe 7 : Sipoufo, Regina, Christ, Wilfrid
+ * @version 1.0
+ *
+ */
 public enum ControllerOrder {
 
 	/** The first map */

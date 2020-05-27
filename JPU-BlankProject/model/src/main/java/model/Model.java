@@ -8,37 +8,51 @@ import com.databaseconnection.DBConnection;
 import contract.IModel;
 import entity.Map;
 
+/**
+ * The Model class.
+ * @author Groupe 7 : Sipoufo, Regina, Christ, Wilfrid
+ * @version 1.0
+ *
+ */
 public final class Model extends Observable implements IModel {
 
-	//****ATTRIBUTS****//
+	/** The map. */
 	private Map map;
+	/** The number of levels */
 	private final static int numberOfLevels = 7;
 	
-	
-	
-	//****CONSTRUCTOR****//
+	/**
+	 * Instantiates a new model.
+	 */
 	public Model() {
 		this.map = new Map();
 	}
 
-	
-	
-	//****GETTERS****//
+	/**
+     * Gets the map.
+     *
+     * @return map
+	 * @see contract.IModel#getMessage()
+	 */
 	public Map getMap() {
 		return this.map;
 	}
 
-	
-	
-	//****SETTERS****//
+	/**
+     * Sets the map
+     * @param map
+     *            the new map
+     */
 	private void setMap(final Map map) {
 		this.map = map;
 		this.modelNotify();
 	}
 
-	
-	
-	//****METHODES****//
+	/**
+     * Load the map
+     * @param id
+	 * @see contract.IModel#getMessage(java.lang.String)
+	 */
 	public void loadMap(final int id) throws IndexOutOfBoundsException {
 		
 		if(id <= numberOfLevels) {
@@ -53,15 +67,28 @@ public final class Model extends Observable implements IModel {
 		}
 	}
 
+	/**
+     * Gets the observable.
+     *
+     * @return the observable
+	 * @see contract.IModel#getObservable()
+	 */
 	public Observable getObservable() {
 		return this;
 	}
 	
+	/**
+	 * Notify observers.
+	 */
 	public void modelNotify() {
 		setChanged();
 		notifyObservers();
 	}
 	
+	/**
+	 * The loop method.
+	 * Executes the map loop and notify observers.
+	 */
 	public void loop() {
 
 		if(this.getMap().getNumberOfDiamondsNeeded() != 0) {

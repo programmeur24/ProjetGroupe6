@@ -4,6 +4,12 @@ import com.entity.mobileelements.MobileElements;
 
 import entity.Entity;
 
+/**
+ * The Strategy class.
+ * @author Groupe 7 : Sipoufo, Regina, Christ, Wilfrid
+ * @version 1.0
+ *
+ */
 
 public abstract class Strategy<T extends Entity> {
 	

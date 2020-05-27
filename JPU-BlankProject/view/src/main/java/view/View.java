@@ -9,14 +9,23 @@ import contract.IController;
 import contract.IModel;
 import contract.IView;
 
-/** View class */
+/**
+ * The View class.
+ * @author Groupe 7 : Sipoufo, Regina, Christ, Wilfrid
+ * @version 1.0
+ *
+ */
 
 public final class View implements IView, Runnable {
 
 	
 	private ViewFrame viewFrame = null; /** return view frame to null */
 
-	
+	/**
+	 * TheView's constructor
+	 * Instantiates a new viewFrame
+	 * @param model
+	 */
 	public View(final IModel model) {
 		this.viewFrame = new ViewFrame(model);
 		SwingUtilities.invokeLater(this);
@@ -26,7 +35,11 @@ public final class View implements IView, Runnable {
 		
 	}
 
-	
+	/**
+	 * 
+	 * @param keyCode
+	 * @return ControllerOrder use for the differents keys
+	 */
 	protected static ControllerOrder keyCodeToControllerOrder(final int keyCode) {
 		switch (keyCode) {
 			case KeyEvent.VK_Z:
@@ -42,12 +55,17 @@ public final class View implements IView, Runnable {
 		}
 	}
 	
+	/**
+	 * @param message
+	 */
 	public void printMessage(final String message) {
 		
 		this.viewFrame.printMessage(message);
 	}
 
-	
+	/**
+	 * For active the windows
+	 */
 	public void run() {
 			this.viewFrame.setVisible(true);
 	}

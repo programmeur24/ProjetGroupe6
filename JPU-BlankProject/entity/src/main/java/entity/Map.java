@@ -10,22 +10,33 @@ import com.entity.motionlesselements.ExitDoor;
 import com.entity.motionlesselements.Path;
 import com.entity.motionlesselements.Walls;
 
+/**
+ * The Map class.
+ * @author Groupe 7 : Sipoufo, Regina, Christ, Wilfrid
+ * @version 1.0
+ *
+ */
+
 public class Map extends Entity {
 
-	//****The content of the map****//
+	/** The content of the map */
 	private String contentOfMap;
-	//****The id of the map****//
+	/** The id of the map */
 	private int id;
-	//****The bidimensional array containing the entities of the map****//
+	/** The bidimensional array containing the entities of the map */
 	private Entity[][] mapToChars;
-	//****The collisions handler of the map****//
+	/** The collisions handler of the map */
 	private CollisionsHandler collisionsHandler;
-	//****The number of diamonds needed to win the level****//
+	/** The number of diamonds needed to win the level */
 	private int numberOfDiamondsNeeded = 0;
 
-	
 
-	//****CONSTRUCTORS****//
+	/**
+	 * The Map's constructor.
+	 * @param id the id of the map
+	 * @param content the content of the map
+	 * @param numberOfDiamondsNeeded the number of diamonds need to win the level
+	 */
 	public Map(final int id, final String content, int numberOfDiamondsNeeded) {
 		this.setId(id);
 		this.setContentOfMap(content);
@@ -33,60 +44,100 @@ public class Map extends Entity {
 		this.createMapToChars();
 		this.numberOfDiamondsNeeded = numberOfDiamondsNeeded;
 	}
-	
-	public Map() {
-		this(1, "", 0);
-	}
 
-	
-	//****GETTERS****//
+	/**
+	 * The getCollisionsHandler method.
+	 * @return CollisionsHandler the collisions handler of the map
+	 */
 	public CollisionsHandler getCollisionsHandler() {
 		return collisionsHandler;
 	}
 
+	/**
+	 * The setCollisionsHandler method.
+	 * @param collisionsHandler the new collisions handler for the map
+	 */
+	public void setCollisionsHandler(CollisionsHandler collisionsHandler) {
+		this.collisionsHandler = collisionsHandler;
+	}
+
+	/**
+	 * Instantiates a new default map.
+	 */
+	public Map() {
+		this(1, "", 0);
+	}
+
+	/**
+	 * Gets the id of the map.
+	 * @return the id
+	 */
 	public int getId() {
 		return this.id;
 	}
-	
+
+	/**
+	 * Sets the id of the map.
+	 * @param id the new id
+	 */
+	public void setId(final int id) {
+		this.id = id;
+	}
+
+	/**
+	 * Gets the content of the map
+	 * @return the content as a String.
+	 */
 	public String getContentOfMap() {
 		return this.contentOfMap;
 	}
-	
+
+	/**
+	 * Sets the content of the map.
+	 * @param content the new content
+	 */
+	public void setContentOfMap(final String content) {
+		this.contentOfMap = content;
+	}
+
+	/**
+	 * The getHeightMap method.
+	 * @return the height of the map
+	 */
 	public int getHeightMap() {
 		String[] mapFirstLength = getContentOfMap().split("\n");
 		return mapFirstLength.length;
 	}
 
+	/**
+	 * The getWidthMap method.
+	 * @return the width of the map
+	 */
 	public int getWidthMap() {
 		String[] mapFirstLength = getContentOfMap().split("\n");
 		return mapFirstLength[0].length() - 1;
 	}
-	
+
+	/**
+	 * The getNumberOfDiamondsNeeded method.
+	 * @return the number of diamonds need to win the level
+	 */
 	public int getNumberOfDiamondsNeeded() {
 		return numberOfDiamondsNeeded;
 	}
-	
-	
-	
-	public void setCollisionsHandler(CollisionsHandler collisionsHandler) {
-		this.collisionsHandler = collisionsHandler;
-	}
 
-	public void setId(final int id) {
-		this.id = id;
-	}
-
-	public void setContentOfMap(final String content) {
-		this.contentOfMap = content;
-	}
-
+	/**
+	 * The setNumberOfDiamondsNeeded method.
+	 * @param numberOfDiamondsNeeded the new number of diamonds need to win the level
+	 */
 	public void setNumberOfDiamondsNeeded(int numberOfDiamondsNeeded) {
 		this.numberOfDiamondsNeeded = numberOfDiamondsNeeded;
 	}
 
-	
-	
-	//****METHODES****//
+	/**
+	 * The createMapToChars method.
+	 * Transform the String content of the map into entities.
+	 */
 	public void createMapToChars() {
 		String map = this.getContentOfMap();
 		if (getHeightMap() >= 1 && getWidthMap() >= 1) {
@@ -130,11 +181,19 @@ public class Map extends Entity {
 		}
 	}
 
+	/**
+	 * The getArrayMap method.
+	 * @return the bidimensional array of the map with all the entities.
+	 */
 	public Entity[][] getArrayMap() {
 
 		return this.mapToChars;
 	}
 
+	/**
+	 * The getPlayer method.
+	 * @return the player of the map.
+	 */
 	public Player getPlayer() {
 		Entity[][] entity = this.getArrayMap();
 		for (int y = 0; y < getHeightMap(); y++) {
@@ -147,6 +206,10 @@ public class Map extends Entity {
 		return null;
 	}
 
+	/**
+	 * The loop method.
+	 * Executes methods of the map and its entities.
+	 */
 	public void loop() {
 		Player p = this.getPlayer();
 		if(p != null) {
@@ -156,6 +219,10 @@ public class Map extends Entity {
 		}
 	}
 	
+	/**
+	 * The runStrategies method.
+	 * Launch the map's entities strategies.
+	 */
 	public void runStrategies() {
 		Entity[][] entity = this.getArrayMap();
 		for (int y = getHeightMap() -1; y >= 0; y--) {

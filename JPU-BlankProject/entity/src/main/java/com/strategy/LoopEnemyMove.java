@@ -4,7 +4,7 @@ import com.entity.mobileelements.Enemy;
 
 /**
  * The LoopEnemyMove class.
- * @author Antoine Chauvel
+ * @author Groupe 7 : Sipoufo, Regina, Christ, Wilfrid
  * @version 1.0
  *
  */
@@ -13,12 +13,15 @@ public class LoopEnemyMove  extends Strategy<Enemy> {
 
 	private Enemy me = null;
 	
-
+	/**
+	 * The LoopEnemyMove's constructor
+	 * @param me
+	 */
 	public LoopEnemyMove(Enemy me) {
 		this.me = me;
 	}
 	
-	@Override
+	
 	public void runStrategy() {
 		
 		double randomDirection = Math.random();
@@ -36,7 +39,9 @@ public class LoopEnemyMove  extends Strategy<Enemy> {
 		
 	}
 
-	@Override
+	/**
+	 * @return LoopEnemyMove
+	 */
 	public String returnStrategy() {
 		return "LoopEnemyMove";
 	}

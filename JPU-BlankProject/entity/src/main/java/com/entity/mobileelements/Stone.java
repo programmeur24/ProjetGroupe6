@@ -9,7 +9,7 @@ import entity.Sprite;
 
 /**
  * The Stone class.
- * @author Antoine Chauvel
+ * @author Groupe 7 : Sipoufo, Regina, Christ, Wilfrid
  * @version 1.0
  *
  */
@@ -30,8 +30,8 @@ public class Stone extends MobileElements {
 	
 	/**
 	 * The stone's constructor
-	 * @param x the initial stone's x on the map
-	 * @param y the initial stone's y on the map
+	 * @param x the initial position of the  stone x on the map
+	 * @param y the initial position odf the stone y on the map
 	 */
 	public Stone(int x, int y) {
 		

@@ -7,15 +7,26 @@ import com.entity.motionlesselements.Path;
 
 import entity.Entity;
 
+/**
+ * The BasicFalling class.
+ *
+ * @author Groupe 7 : Sipoufo, Regina, Christ, Wilfrid
+ * @version 1.0
+ */
 
 public class BasicFalling extends Strategy<MobileElements> {
 
-	
+	/**
+	 * The BasicFalling's constructor
+	 * @param me
+	 */
 	public BasicFalling(MobileElements me) {
 		this.me = me;
 	}
 	
-	
+	/**
+	 * runStrategy allows data of the gravity the rock
+	 */
 	@Override
 	public void runStrategy() {
 		
@@ -40,6 +51,10 @@ public class BasicFalling extends Strategy<MobileElements> {
 		}
 	}
 	
+	
+	/**
+	 * @return BasicFalling
+	 */
 	@Override
 	public String returnStrategy() {
 		return "BasicFalling";

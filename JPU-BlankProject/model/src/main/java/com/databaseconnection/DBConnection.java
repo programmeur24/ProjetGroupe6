@@ -4,6 +4,13 @@ import java.sql.Connection;
 import java.sql.DriverManager;
 import java.sql.SQLException;
 
+/**
+ * The DBConnection class.
+ * @author Groupe 7 : Sipoufo, Regina, Christ, Wilfrid
+ * @version 1.0
+ *
+ */
+
 public final class DBConnection {
 	//****ATTRIBUTS****//
 	private static DBConnection	INSTANCE	= null;
@@ -11,14 +18,19 @@ public final class DBConnection {
 	
 	
 	
-	//****CONTRUCTOR****//
+	/**
+	 * The DBConnection's constructor.
+	 */
 	private DBConnection() {
 		this.open();
 	}
 	
 	
 	
-	//****GETTERS****//
+	/**
+	 * 
+	 * @return DBConnection
+	 */
 	public static synchronized DBConnection getInstance() {
 		if (DBConnection.INSTANCE == null) {
 			DBConnection.INSTANCE = new DBConnection();
@@ -29,7 +41,10 @@ public final class DBConnection {
 
 	
 	
-	//****METHODES****//
+	/**
+	 * 
+	 * @return Boolean
+	 */
 	private Boolean open() {
 		final DBProperties dbProperties = new DBProperties();
 		try {
@@ -42,7 +57,11 @@ public final class DBConnection {
 		}
 		return true;
 	}
-	//****CONNECTION****//
+	
+	/**
+	 *  Connection
+	 * @return
+	 */
 	public Connection getConnection() {
 		return this.connection;
 	}

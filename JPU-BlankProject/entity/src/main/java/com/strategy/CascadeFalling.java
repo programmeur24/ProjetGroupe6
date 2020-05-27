@@ -8,14 +8,26 @@ import com.entity.motionlesselements.Path;
 
 import entity.Entity;
 
+/**
+ * The CascadingFalling class.
+ *
+ * @author Groupe 7 : Sipoufo, Regina, Christ, Wilfrid
+ * @version 1.0
+ */
+
 public class CascadeFalling extends Strategy<MobileElements> {
 
-
+	/**
+	 * The CascadeFalling's constructor
+	 * @param me
+	 */
 	public CascadeFalling(MobileElements me) {
 		this.me = me;
 	}
 
-	@Override
+	/**
+	 * runStrategy allows data of the gravity the rock
+	 */
 	public void runStrategy() {
 		
 		Entity getNextEntity = me.getMap().getArrayMap()[me.getPositionX()][me.getPositionY()+1];
@@ -45,7 +57,11 @@ public class CascadeFalling extends Strategy<MobileElements> {
 	}
 	
 	
-
+	/**
+	 * 
+	 * @param sideX
+	 * @param sideY
+	 */
 	public void cascadeFalling(int sideX, int sideY) {
 		
 		me.getMap().getArrayMap()[me.getPositionX() + sideX][me.getPositionY() + sideY] = me;
@@ -56,7 +72,9 @@ public class CascadeFalling extends Strategy<MobileElements> {
 		
 	}
 
-	@Override
+	/**
+	 * CascadeFalling
+	 */
 	public String returnStrategy() {
 		return "CascadeFalling";
 	}

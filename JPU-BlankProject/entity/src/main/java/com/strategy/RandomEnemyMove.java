@@ -2,17 +2,27 @@ package com.strategy;
 
 import com.entity.mobileelements.Enemy;
 
+/**
+ * The LoopEnemyMove class.
+ * @author Groupe 7 : Sipoufo, Regina, Christ, Wilfrid
+ * @version 1.0
+ *
+ */
 
 public class RandomEnemyMove extends Strategy<Enemy> {
 
-	
+	//****Initialization of an enemy****//
 	private Enemy me = null;
 	
+	/**
+	 * 
+	 * @param me
+	 */
 	public RandomEnemyMove(Enemy me) {
 		this.me = me;
 	}
 
-	@Override
+	
 	public void runStrategy() {
 		
 		if(me.getIsAlive()) {
@@ -41,7 +51,9 @@ public class RandomEnemyMove extends Strategy<Enemy> {
 		
 	}
 
-	@Override
+	/**
+	 * RandomEnemyMove
+	 */
 	public String returnStrategy() {
 		return "RandomEnemyMove";
 	}
