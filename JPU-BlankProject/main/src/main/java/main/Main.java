@@ -23,7 +23,7 @@ public abstract class Main {
         final Controller controller = new Controller(view, model);
         view.setController(controller);
         controller.control();
-        controller.orderPerform(ControllerOrder.Map7); 
+        controller.orderPerform(ControllerOrder.Map1); 
 
         controller.start();
 
