@@ -10,6 +10,13 @@ import org.junit.Test;
 
 import entity.EntityTest;
 
+/**
+ * The CollisionsHandler Class.
+ *
+ * @author Groupe 7 : Sipoufo, Regina, Christ, Wilfrid
+ * @version 1.0
+ */
+
 public class DirtTest extends EntityTest {
 
 	@BeforeClass

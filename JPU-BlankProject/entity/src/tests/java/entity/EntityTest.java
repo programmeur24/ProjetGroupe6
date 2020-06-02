@@ -8,6 +8,13 @@ import org.junit.Before;
 import org.junit.BeforeClass;
 import org.junit.Test;
 
+/**
+ * The CollisionsHandler Class.
+ *
+ * @author Groupe 7 : Sipoufo, Regina, Christ, Wilfrid
+ * @version 1.0
+ */
+
 public class EntityTest {
 
 	protected static Entity entity;

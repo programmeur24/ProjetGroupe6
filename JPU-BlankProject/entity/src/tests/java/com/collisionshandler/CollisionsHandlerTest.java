@@ -14,6 +14,13 @@ import com.entity.mobileelements.Stone;
 
 import entity.Map;
 
+/**
+ * The CollisionsHandler Class.
+ *
+ * @author Groupe 7 : Sipoufo, Regina, Christ, Wilfrid
+ * @version 1.0
+ */
+
 public class CollisionsHandlerTest {
 
 	/** The map to test collisions. */

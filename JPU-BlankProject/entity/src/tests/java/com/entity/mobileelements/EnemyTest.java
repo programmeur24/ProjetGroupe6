@@ -13,6 +13,13 @@ import com.strategy.RandomEnemyMove;
 import entity.EntityTest;
 import entity.Map;
 
+/**
+ * The CollisionsHandler Class.
+ *
+ * @author Groupe 7 : Sipoufo, Regina, Christ, Wilfrid
+ * @version 1.0
+ */
+
 public class EnemyTest extends EntityTest {
 
 	Map map;

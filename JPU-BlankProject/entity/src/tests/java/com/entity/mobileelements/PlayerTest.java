@@ -12,6 +12,13 @@ import entity.EntityTest;
 import entity.Map;
 import entity.Sprite;
 
+/**
+ * The CollisionsHandler Class.
+ *
+ * @author Groupe 7 : Sipoufo, Regina, Christ, Wilfrid
+ * @version 1.0
+ */
+
 public class PlayerTest extends EntityTest {
 
 	/** The player of the test */

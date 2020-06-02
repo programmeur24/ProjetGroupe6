@@ -8,13 +8,20 @@ import org.junit.Before;
 import org.junit.BeforeClass;
 import org.junit.Test;
 
+/**
+ * The CollisionsHandler Class.
+ *
+ * @author Groupe 7 : Sipoufo, Regina, Christ, Wilfrid
+ * @version 1.0
+ */
+
 public class MapTest {
 
 	static Map map;
 	
 	@BeforeClass
 	public static void setUpBeforeClass() throws Exception {
-		map = new Map(1 , "qqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqq\r\n" + 
+		map = new Map(5 , "qqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqq\r\n" + 
 				"qtttootttttttttttttqtttttttttttttttttttq\r\n" + 
 				"qtttxttttttttttttttqtotttoottttttttxtttq\r\n" + 
 				"qtttxttttttttttttttqtttttttttttttttttttq\r\n" + 
@@ -68,6 +75,10 @@ public class MapTest {
 	public void tearDown() throws Exception {
 	}
 
+	
+	/**
+	 * tests if the method returns a value
+	 */
 	@Test
 	public void testMapFulfilled() {
 		assertNotNull(map.getPlayer());
