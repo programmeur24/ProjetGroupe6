@@ -78,25 +78,34 @@ class DBProperties extends Properties {
 	
 	
 	/**
-	 * 
+	 * Sets the url.
+	 *
 	 * @param url
+	 *          the new url
 	 */
+	
 	private void setUrl(final String url) {
 		this.url = url;
 	}
 
 	/**
-	 * 
+	 * Sets the login.
+	 *
 	 * @param login
+	 *          the new login
 	 */
+	
 	private void setLogin(final String login) {
 		this.login = login;
 	}
 
 	/**
-	 * 
+	 * Sets the password.
+	 *
 	 * @param password
+	 *          the new password
 	 */
+	
 	private void setPassword(final String password) {
 		this.password = password;
 	}

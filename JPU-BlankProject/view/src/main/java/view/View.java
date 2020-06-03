@@ -22,10 +22,12 @@ public final class View implements IView, Runnable {
 	private ViewFrame viewFrame = null; /** return view frame to null */
 
 	/**
-	 * TheView's constructor
-	 * Instantiates a new viewFrame
+	 * Instantiates a new view.
+	 *
 	 * @param model
+	 *          the model
 	 */
+	
 	public View(final IModel model) {
 		this.viewFrame = new ViewFrame(model);
 		SwingUtilities.invokeLater(this);
@@ -36,10 +38,13 @@ public final class View implements IView, Runnable {
 	}
 
 	/**
-	 * 
+	 * Key code to controller order.
+	 *
 	 * @param keyCode
-	 * @return ControllerOrder use for the differents keys
+	 *          the key code 
+	 * @return the controller order
 	 */
+	
 	protected static ControllerOrder keyCodeToControllerOrder(final int keyCode) {
 		switch (keyCode) {
 			case KeyEvent.VK_Z:
@@ -55,22 +60,32 @@ public final class View implements IView, Runnable {
 		}
 	}
 	
-	/**
-	 * @param message
+	/*
+	 * (non-Javadoc)
+	 *
+	 * @see contract.IView#printMessage(java.lang.String)
 	 */
+	
 	public void printMessage(final String message) {
 		
 		this.viewFrame.printMessage(message);
 	}
 
-	/**
-	 * For active the windows
+	/*
+	 * (non-Javadoc)
+	 *
+	 * @see java.lang.Runnable#run()
 	 */
 	public void run() {
 			this.viewFrame.setVisible(true);
 	}
 
-	/** sets controller and parameter */
+	/**
+	 * Sets the controller.
+	 *
+	 * @param controller
+	 *          the new controller
+	 */
 	
 	public void setController(final IController controller) {
 		this.viewFrame.setController(controller);

@@ -10,6 +10,13 @@ import org.junit.Test;
 
 import com.databaseconnection.DBConnection;
 
+/**
+ * The CollisionsHandler Class.
+ *
+ * @author Groupe 7 : Sipoufo, Regina, Christ, Wilfrid
+ * @version 1.0
+ */
+
 public class DAOMapTest {
 	
 	private static DAOMap daoMap;

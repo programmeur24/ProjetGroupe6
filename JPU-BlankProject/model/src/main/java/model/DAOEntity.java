@@ -20,8 +20,11 @@ public abstract class DAOEntity<E extends Entity> {
 	 * Instantiates a new DAO entity.
 	 *
 	 * @param connection
+	 *          the connection
 	 * @throws SQLException
+	 *           the SQL exception
 	 */
+	
 	public DAOEntity(final Connection connection) throws SQLException {
 		this.connection = connection;
 	}
@@ -35,34 +38,41 @@ public abstract class DAOEntity<E extends Entity> {
 	}
 
 	/**
-	 * Creates
+	 * Creates the.
 	 *
 	 * @param entity
+	 *          the entity
 	 * @return true, if successful
 	 */
+	
 	public abstract boolean create(E entity);
 
 	/**
-	 * Delete.
+	 * Creates the.
 	 *
 	 * @param entity
+	 *          the entity
 	 * @return true, if successful
 	 */
+	
 	public abstract boolean delete(E entity);
 
 	/**
-	 * Update.
+	 * Creates the.
 	 *
 	 * @param entity
+	 *          the entity
 	 * @return true, if successful
 	 */
+	
 	public abstract boolean update(E entity);
 
 	/**
 	 * Find.
 	 *
 	 * @param id
-	 * @return the E
+	 *          the id
+	 * @return the e
 	 */
 	public abstract E find(int id);
 

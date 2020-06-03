@@ -19,8 +19,11 @@ public class DAOMap extends DAOEntity<Map> {
 	 * Instantiates a new DAO map.
 	 *
 	 * @param connection
+	 *          the connection
 	 * @throws SQLException
+	 *           the SQL exception
 	 */
+	
 	public DAOMap(final Connection connection) throws SQLException {
 		super(connection);
 	}

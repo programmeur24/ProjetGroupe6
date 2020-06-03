@@ -147,7 +147,7 @@ public class Player extends MobileElements {
 	
 	/**
 	 * The didPlayerWin method.
-	 * the number of diamond so that the user can pass to the following level
+	 * @param numberOfDiamondsNeeded the number of diamonds necessary to go the next level, stored in the database
 	 */
 	public void didPlayerWin(int numberOfDiamondsNeeded) {
 		

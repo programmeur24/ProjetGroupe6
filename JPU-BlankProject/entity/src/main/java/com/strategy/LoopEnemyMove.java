@@ -14,9 +14,10 @@ public class LoopEnemyMove  extends Strategy<Enemy> {
 	private Enemy me = null;
 	
 	/**
-	 * The LoopEnemyMove's constructor
-	 * @param me
+	 * The CascadeFalling strategy constructor.
+	 * @param me the mobile element concerned
 	 */
+	
 	public LoopEnemyMove(Enemy me) {
 		this.me = me;
 	}

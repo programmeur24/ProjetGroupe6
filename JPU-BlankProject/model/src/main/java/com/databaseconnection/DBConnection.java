@@ -60,7 +60,7 @@ public final class DBConnection {
 	
 	/**
 	 *  Connection
-	 * @return
+	 * @return the connection
 	 */
 	public Connection getConnection() {
 		return this.connection;

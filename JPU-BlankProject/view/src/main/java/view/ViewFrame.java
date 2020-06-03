@@ -12,12 +12,11 @@ import contract.IController;
 import contract.IModel;
 
 /**
- * The Entity class.
+ * The View class.
  * @author Groupe 7 : Sipoufo, Regina, Christ, Wilfrid
  * @version 1.0
  *
  */
-
 class ViewFrame extends JFrame implements KeyListener {
 
 	/** The model. */
@@ -27,19 +26,21 @@ class ViewFrame extends JFrame implements KeyListener {
 	/** The Constant serialVersionUID. */
 	private static final long serialVersionUID = -697358409737458175L;
 
-	/** serial version in place */
 	/**
-	 * @param model
-	 * @throws HeadlessException
+	 * Instantiates a new view frame.
+	 *
+	 * @param model the model
+	 * @throws HeadlessException the headless exception
 	 */
 	public ViewFrame(final IModel model) throws HeadlessException {
 		this.buildViewFrame(model);
 	}
 
 	/**
-	 * 
-	 * @param model
-	 * @param gc
+	 * Instantiates a new view frame.
+	 *
+	 * @param model the model
+	 * @param gc    the gc
 	 */
 	public ViewFrame(final IModel model, final GraphicsConfiguration gc) {
 		super(gc);
@@ -47,10 +48,11 @@ class ViewFrame extends JFrame implements KeyListener {
 	}
 
 	/**
-	 * 
-	 * @param model
-	 * @param title
-	 * @throws HeadlessException
+	 * Instantiates a new view frame.
+	 *
+	 * @param model the model
+	 * @param title the title
+	 * @throws HeadlessException the headless exception
 	 */
 	public ViewFrame(final IModel model, final String title) throws HeadlessException {
 		super(title);
@@ -58,74 +60,103 @@ class ViewFrame extends JFrame implements KeyListener {
 	}
 
 	/**
-	 * 
-	 * @param model
-	 * @param title
-	 * @param gc
+	 * Instantiates a new view frame.
+	 *
+	 * @param model the model
+	 * @param title the title
+	 * @param gc    the gc
 	 */
 	public ViewFrame(final IModel model, final String title, final GraphicsConfiguration gc) {
 		super(title, gc);
 		this.buildViewFrame(model);
 	}
 
-	/** Gets the controller */
-	/** return the controller*/
-	
+	/**
+	 * Gets the controller.
+	 *
+	 * @return the controller
+	 */
 	private IController getController() {
 		return this.controller;
 	}
 
-	/** sets our controller and parameter*/
-	
+	/**
+	 * Sets the controller.
+	 *
+	 * @param controller the new controller
+	 */
 	protected void setController(final IController controller) {
 		this.controller = controller;
 	}
 
-	/**gets the model and return it */
-	
+	/**
+	 * Gets the model.
+	 *
+	 * @return the model
+	 */
 	protected IModel getModel() {
 		return this.model;
 	}
 
-	/** sets the model and parameter */
-	
+	/**
+	 * Sets the model.
+	 *
+	 * @param model the new model
+	 */
 	private void setModel(final IModel model) {
 		this.model = model;
 	}
 
-	/** build the ViewFrame and parameter */
-	
+	/**
+	 * Builds the view frame.
+	 *
+	 * @param model the model
+	 */
 	private void buildViewFrame(final IModel model) {
 		this.setModel(model);
 		this.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 		this.setResizable(false);
 		this.addKeyListener(this);
 		ViewPanel vp = new ViewPanel(this);
-		this.setTitle("Boulder Dash - Group 7");
+		this.setTitle("BoulderDash");
 		this.setContentPane(vp);
 		this.setSize(640,740);
 		this.setLocationRelativeTo(null);
 	}
 
-	/** print the message */
-	
+	/**
+	 * Prints the message.
+	 *
+	 * @param message the message
+	 */
 	public void printMessage(final String message) {
 		JOptionPane.showMessageDialog(null, message);
 	}
  
-
+	/*
+	 * (non-Javadoc)
+	 *
+	 * @see java.awt.event.KeyListener#keyTyped(java.awt.event.KeyEvent)
+	 */
 	public void keyTyped(final KeyEvent e) {
 
 	}
 
-	
+	/*
+	 * (non-Javadoc)
+	 *
+	 * @see java.awt.event.KeyListener#keyPressed(java.awt.event.KeyEvent)
+	 */
 	public void keyPressed(final KeyEvent e) {
 		
 	}
 
-	
+	/*
+	 * (non-Javadoc)
+	 *
+	 * @see java.awt.event.KeyListener#keyReleased(java.awt.event.KeyEvent)
+	 */
 	public void keyReleased(final KeyEvent e) {
 		this.getController().orderPerform(View.keyCodeToControllerOrder(e.getKeyCode())); 
 	}
 }
-

@@ -18,9 +18,10 @@ import entity.Entity;
 public class CascadeFalling extends Strategy<MobileElements> {
 
 	/**
-	 * The CascadeFalling's constructor
-	 * @param me
+	 * The CascadeFalling strategy constructor.
+	 * @param me the mobile element concerned
 	 */
+	
 	public CascadeFalling(MobileElements me) {
 		this.me = me;
 	}
@@ -58,9 +59,10 @@ public class CascadeFalling extends Strategy<MobileElements> {
 	
 	
 	/**
-	 * 
-	 * @param sideX
-	 * @param sideY
+	 * The cascadeFalling method.
+	 * Defines the falling of the mobile element.
+	 * @param sideX the x side on which the entity is going to fell
+	 * @param sideY the y side on which the entity is going to fell
 	 */
 	public void cascadeFalling(int sideX, int sideY) {
 		

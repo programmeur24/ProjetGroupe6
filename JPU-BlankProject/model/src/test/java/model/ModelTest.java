@@ -9,6 +9,13 @@ import org.junit.Before;
 import org.junit.BeforeClass;
 import org.junit.Test;
 
+/**
+ * The CollisionsHandler Class.
+ *
+ * @author Groupe 7 : Sipoufo, Regina, Christ, Wilfrid
+ * @version 1.0
+ */
+
 public class ModelTest {
 	
 	private Model model;
@@ -64,7 +71,7 @@ public class ModelTest {
     public void testGetContentOfMap() {
         this.model.loadMap(1);
         assertEquals("qqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqq\r\n" + 
-        		"qttttttttttttttttttttttttttttttttttttttq\r\n" + 
+        		"qttttttttttttttttttqtttttttttttttttttttq\r\n" + 
         		"qtootttttxttttttttttttuotttttttttuuttttq\r\n" + 
         		"qttttttttttttttttttttuuttttttttttxtttttq\r\n" + 
         		"qttyuttttttttttttttttttttttttttttttttttq\r\n" + 

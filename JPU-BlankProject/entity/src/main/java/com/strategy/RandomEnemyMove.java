@@ -15,9 +15,10 @@ public class RandomEnemyMove extends Strategy<Enemy> {
 	private Enemy me = null;
 	
 	/**
-	 * 
-	 * @param me
+	 * The CascadeFalling strategy constructor.
+	 * @param me the mobile element concerned
 	 */
+	
 	public RandomEnemyMove(Enemy me) {
 		this.me = me;
 	}

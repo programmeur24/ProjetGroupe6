@@ -17,8 +17,8 @@ import entity.Entity;
 public class BasicFalling extends Strategy<MobileElements> {
 
 	/**
-	 * The BasicFalling's constructor
-	 * @param me
+	 * The BasicFalling strategy constructor
+	 * @param me the mobile element concerned
 	 */
 	public BasicFalling(MobileElements me) {
 		this.me = me;

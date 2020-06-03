@@ -46,7 +46,7 @@ public final class Controller implements IController {
 	}
 	
 	public String getMessageToShow() {
-		return "Welcome to BoulderDash ! Press any key to start the game. Press 1, 2, 3, 4 or 5 to change the map. Use Z/Q/S/D to move the character.";
+		return "Welcome to BoulderDash of Group 7 ! \n Press Space for start the game. Use Z/Q/S/D to move the character.";
 	}
 	
 	/**

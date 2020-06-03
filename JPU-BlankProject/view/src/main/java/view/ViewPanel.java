@@ -18,12 +18,14 @@ import entity.Entity;
 import entity.Map;
 
 /**
- * The ViewPanel class.
+ * The View class.
  * @author Groupe 7 : Sipoufo, Regina, Christ, Wilfrid
  * @version 1.0
  *
  */
-public class ViewPanel extends JPanel implements Observer {
+@SuppressWarnings("unused")
+public
+class ViewPanel extends JPanel implements Observer {
 
 	/** The view frame. */
 	private ViewFrame viewFrame;
@@ -39,31 +41,57 @@ public class ViewPanel extends JPanel implements Observer {
 	public ViewPanel() {
 	}
 
-	/** instantiates ViewFrame and param it */
+	/**
+	 * Instantiates a new view panel.
+	 *
+	 * @param viewFrame the view frame
+	 */
 	public ViewPanel(final ViewFrame viewFrame) {
 		this.setViewFrame(viewFrame);
 		viewFrame.getModel().getObservable().addObserver(this);
 		viewFrame.getModel().getMap();
 	}
 
-	/** get ViewFrame and return it */
-	
+	/**
+	 * Gets the view frame.
+	 *
+	 * @return the view frame
+	 */
 	private ViewFrame getViewFrame() {
 		return this.viewFrame;
 	}
-		/** set ViewFramd and param it */
+
+	/**
+	 * Sets the view frame.
+	 *
+	 * @param viewFrame the new view frame
+	 */
 	private void setViewFrame(final ViewFrame viewFrame) {
 		this.viewFrame = viewFrame;
 	}
 
-	/** repaint the view */
+	/*
+	 * (non-Javadoc)
+	 *
+	 * @see java.util.Observer#update(java.util.Observable, java.lang.Object)
+	 */
+	/**
+	 * Repaint the view.
+	 */
 	public void update(final Observable arg0, final Object arg1) {
 		this.repaint();
 	}
 
-	/**
-	 *  @param graphics
+	/*
+	 * (non-Javadoc)
+	 *
+	 * @see javax.swing.JComponent#paintComponent(java.awt.Graphics)
 	 */
+
+	/**
+	 * Display information on screen. Method called each time the view is "painted".
+	 */
+	@Override
 	protected void paintComponent(final Graphics graphics) {
 
 		final double scale = 3.0;
@@ -101,7 +129,10 @@ public class ViewPanel extends JPanel implements Observer {
 				graphics.clearRect(0, 0, width, height);
 				graphics.drawString("BAD TIMING !", width / 2 - 75, height / 2);
 				counter = -100;
-				
+				/*
+				 * NOW WE HAVE TO PERFORM AN ACTION WHEN THE PLAYER LOOSES (+ RESTART THE TIMER
+				 * = set it two 200 when the player switch between the maps)
+				 */
 			}
 			
 
@@ -110,7 +141,11 @@ public class ViewPanel extends JPanel implements Observer {
 		}
 	}
 
-	/** start the time and launch it */
+	/**
+	 * The startTimer method.
+	 * Launch a specific timer, calculated by seconds.
+	 * 
+	 */
 	public static void startTimer() { // This is a timer
 		ViewPanel drawTimer = new ViewPanel();
 		TimerTask timerTask = new TimerTask() {
@@ -200,7 +235,7 @@ public class ViewPanel extends JPanel implements Observer {
 	 * @param scale the zoom used to focus on the player
 	 * @param width the width of the view
 	 * @param height the height of the view
-	 * @param playerPosX the x coord of the player-
+	 * @param playerPosX the x coord of the player
 	 * @param playerPosY the y coord of the player
 	 * @param player the player
 	 * @param map the map
@@ -239,14 +274,22 @@ public class ViewPanel extends JPanel implements Observer {
 
 	}
 	
-	/** get the counter and return it */
-   
+	
+	 
+    /**
+     * The getCounter method.
+     * @return the counter
+     */
     public int getCounter() {
       return counter;
     }
 
-    /**sets the Counter, parameter and throw new IndexOutOfBoundsException */
     
+    /**
+     * The setCounter method.
+     * @param newCounter the new counter
+     * @throws IndexOutOfBoundsException in case of an exception
+     */
     public void setCounter(int newCounter) throws IndexOutOfBoundsException{
       if (newCounter > 0 && newCounter < 10000) {
           ViewPanel.counter = newCounter;
@@ -256,4 +299,3 @@ public class ViewPanel extends JPanel implements Observer {
     }
 
 }
-

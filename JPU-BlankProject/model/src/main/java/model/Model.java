@@ -32,17 +32,24 @@ public final class Model extends Observable implements IModel {
      * Gets the map.
      *
      * @return map
+     */
+	/*
+	 * (non-Javadoc)
+	 *
 	 * @see contract.IModel#getMessage()
 	 */
+	
 	public Map getMap() {
 		return this.map;
 	}
 
 	/**
      * Sets the map
+     *
      * @param map
      *            the new map
      */
+	
 	private void setMap(final Map map) {
 		this.map = map;
 		this.modelNotify();
@@ -50,7 +57,13 @@ public final class Model extends Observable implements IModel {
 
 	/**
      * Load the map
+     *
      * @param id
+     *            the id of the map
+     */
+	/*
+	 * (non-Javadoc)
+	 *
 	 * @see contract.IModel#getMessage(java.lang.String)
 	 */
 	public void loadMap(final int id) throws IndexOutOfBoundsException {
@@ -71,8 +84,13 @@ public final class Model extends Observable implements IModel {
      * Gets the observable.
      *
      * @return the observable
+     */
+	/*
+	 * (non-Javadoc)
+	 *
 	 * @see contract.IModel#getObservable()
 	 */
+	
 	public Observable getObservable() {
 		return this;
 	}
