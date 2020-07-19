@@ -115,12 +115,12 @@ class ViewFrame extends JFrame implements KeyListener {
 	private void buildViewFrame(final IModel model) {
 		this.setModel(model);
 		this.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
-		this.setResizable(false);
+		this.setResizable(true);
 		this.addKeyListener(this);
 		ViewPanel vp = new ViewPanel(this);
-		this.setTitle("BoulderDash");
+		this.setTitle("BoulderDash-Groupe-6");
 		this.setContentPane(vp);
-		this.setSize(640,740);
+		this.setSize(1440,760);
 		this.setLocationRelativeTo(null);
 	}
 
