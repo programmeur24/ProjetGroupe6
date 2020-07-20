@@ -47,7 +47,8 @@ public class ControllerTest {
 	@Test
 	public void testMessagePrinted() {
 		
-		final String expectedMessage = "Welcome to BoulderBash ! Press any key to start the game. Press 1, 2, 3, 4 or 5 to change the map. Use Z/Q/S/D to move the character.";
+		final String expectedMessage = "Welcome to BoulderBash for group 7"
+				+ " ! Press any key to start the game. Press 1, 2, 3, 4 or 5 to change the map. Use Z/Q/S/D to move the character.";
 		
 		assertEquals(expectedMessage, controller.getMessageToShow());
 		

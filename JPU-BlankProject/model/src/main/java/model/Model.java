@@ -19,7 +19,7 @@ public final class Model extends Observable implements IModel {
 	/** The map. */
 	private Map map;
 	/** The number of levels */
-	private final static int numberOfLevels = 5;
+	private final static int numberOfLevels = 6;
 	
 	/**
 	 * Instantiates a new model.
