@@ -23,6 +23,22 @@ public enum ControllerOrder {
 	Map6,
 	/** The seventh map */
 	Map7,
+	
+	/** Change map */
+	u,
+	/** Change map */
+	i,
+	/** Change map */
+	o,
+	/** Change map */
+	p,
+	/** Change map */
+	j,
+	/** Change map */
+	k,
+	/** Change map */
+	l,
+	
 	/** To go up */
 	Z,
 	/** To go left */
